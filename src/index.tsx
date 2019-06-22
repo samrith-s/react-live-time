@@ -5,9 +5,17 @@ interface ReactLiveTimeProps {
 }
 
 const ReactLiveTime: FunctionComponent<ReactLiveTimeProps> = ({
-  time: propTime = 0
+  time: propTime
 }) => {
-  const [time, updateTime] = useState(propTime);
+  const timeValue = new Date(propTime);
+
+  if (timeValue.toString() === 'Invalid Date') {
+    throw new Error(
+      `[React Live Date]: Unexpected date value for prop 'time'.`
+    );
+  }
+
+  const [time, updateTime] = useState(timeValue);
 
   useEffect(() => {
     // const timer = setTimeout(() => {
