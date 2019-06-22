@@ -1,10 +1,16 @@
 {
   "name": "react-live-time",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A component to display real-time for posts, notifications, messages, feeds, etc.",
   "author": "samrith-s",
   "license": "GPL-3.0-or-later",
-  "repository": "samrith-s/react-live-time",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samrith-s/react-live-time.git"
+  },
+  "bugs": {
+    "url": "https://github.com/samrith-s/react-live-time/issues"
+  },
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -21,9 +27,7 @@
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build"
   },
-  "dependencies": {},
   "peerDependencies": {
-    "prop-types": "^15.5.4",
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0"
   },
