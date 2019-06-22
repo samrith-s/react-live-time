@@ -1,17 +1,22 @@
-/**
- * @class ExampleComponent
- */
+import React, { FunctionComponent, useState, useEffect } from 'react';
 
-import * as React from 'react';
-
-import styles from './styles.css';
-
-export type Props = { text: string };
-
-export default class ExampleComponent extends React.Component<Props> {
-  render() {
-    const { text } = this.props;
-
-    return <div className={styles.test}>Example Component: {text}</div>;
-  }
+interface ReactLiveTimeProps {
+  time: number;
 }
+
+const ReactLiveTime: FunctionComponent<ReactLiveTimeProps> = ({
+  time: propTime = 0
+}) => {
+  const [time, updateTime] = useState(propTime);
+
+  useEffect(() => {
+    // const timer = setTimeout(() => {
+    //   updateTime(time + 1);
+    // });
+    // return () => clearTimeout(timer);
+  }, [time, updateTime]);
+
+  return <div>Example Component: {time}</div>;
+};
+
+export default ReactLiveTime;
