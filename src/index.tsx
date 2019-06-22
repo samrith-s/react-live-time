@@ -7,12 +7,12 @@ interface ReactLiveTimeProps {
 const ReactLiveTime: FunctionComponent<ReactLiveTimeProps> = ({
   time: propTime
 }) => {
-  const timeValue = new Date(propTime);
+  let timeValue;
 
-  if (timeValue.toString() === 'Invalid Date') {
-    throw new Error(
-      `[React Live Date]: Unexpected date value for prop 'time'.`
-    );
+  try {
+    timeValue = new Date(propTime);
+  } catch (e) {
+    throw new Error(e);
   }
 
   const [time, updateTime] = useState(timeValue);
