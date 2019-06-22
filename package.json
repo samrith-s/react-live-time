@@ -54,5 +54,11 @@
   },
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "react",
+    "time",
+    "live-time",
+    "timer"
   ]
 }
