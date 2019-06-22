@@ -1,13 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react';
 
-import ExampleComponent from 'react-live-time'
+import ReactLiveTime from 'react-live-time';
 
-export default class App extends Component {
-  render () {
-    return (
-      <div>
-        <ExampleComponent text='Modern React component module' />
-      </div>
-    )
-  }
+export default function() {
+  return (
+    <div>
+      <ReactLiveTime time={0} />
+    </div>
+  );
 }
