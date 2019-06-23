@@ -1,6 +1,6 @@
 {
   "name": "react-live-time",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A component to display real-time for posts, notifications, messages, feeds, etc.",
   "author": "samrith-s",
   "license": "GPL-3.0-or-later",
