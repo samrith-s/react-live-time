@@ -58,7 +58,7 @@ There is a basic example up and running on the [GitHub pages][gh-pages]
 
 GPL-3.0-or-later © [samrith-s](https://github.com/samrith-s)
 
-[gh-pages]: https:///samrith0s.github.io/react-live-time
+[gh-pages]: https://samrith-s.github.io/react-live-time/
 [npm]: https://www.npmjs.com/package/react-live-time
 [js-std]: https://standardjs.com
 [df]: https://www.npmjs.com/package/dateformat
