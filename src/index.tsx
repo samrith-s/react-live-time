@@ -9,7 +9,7 @@ import {
 } from './util';
 
 interface ReactLiveTimeProps {
-  time: Date;
+  time: Date | number;
   format?: string;
   renderer?: Function;
   showSeconds?: boolean;
@@ -18,7 +18,7 @@ interface ReactLiveTimeProps {
 const ReactLiveTime: FunctionComponent<ReactLiveTimeProps> = ({
   time,
   format = FORMAT,
-  showSeconds,
+  showSeconds = false,
   renderer
 }) => {
   const [diff, setDiff] = useState(diffSetter(time));
