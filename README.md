@@ -10,18 +10,22 @@
 npm install --save react-live-time
 ```
 
+or
+
+```bash
+yarn add react-live-time
+```
+
 ## Usage
 
-```tsx
-import * as React from 'react'
+```javascript
+import React from 'react';
 
-import MyComponent from 'react-live-time'
+import ReactLiveTime from 'react-live-time';
 
-class Example extends React.Component {
-  render () {
-    return (
-      <MyComponent />
-    )
+class MyApp extends React.Component {
+  render() {
+    return <ReactLiveTime time={Date.now()} />;
   }
 }
 ```
