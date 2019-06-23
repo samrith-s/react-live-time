@@ -4,46 +4,48 @@ import {
   FORMAT,
   getStatusFromTime,
   getTimeoutFromStatus,
-  setDiff,
-  getTextFromTimeAndStatus
+  textSetter,
+  diffSetter
 } from './util';
 
 interface ReactLiveTimeProps {
   time: Date;
   format?: string;
+  renderer?: Function;
+  showSeconds?: boolean;
 }
 
 const ReactLiveTime: FunctionComponent<ReactLiveTimeProps> = ({
   time,
-  format = FORMAT
+  format = FORMAT,
+  showSeconds,
+  renderer
 }) => {
-  let timeValue: number;
-
-  try {
-    timeValue = new Date(time).getTime();
-  } catch (e) {
-    throw new Error(e);
-  }
-
-  const diffSetter = setDiff(timeValue);
-  let diff = diffSetter();
-
-  const textSetter = getTextFromTimeAndStatus(diff, timeValue, format);
-
+  const [diff, setDiff] = useState(diffSetter(time));
   const [status, setStatus] = useState(getStatusFromTime(diff));
-  const [text, setText] = useState(textSetter(status));
+  const [text, setText] = useState(textSetter(diff, time, status, format));
+
+  useEffect(() => setDiff(diffSetter(time)), [time, showSeconds]);
+  useEffect(() => setStatus(getStatusFromTime(diff, showSeconds)), [
+    diff,
+    showSeconds
+  ]);
+  useEffect(() => {
+    setText(textSetter(diff, time, status, format));
+  }, [status, diff, format]);
 
   useEffect(() => {
-    const timeout: number = getTimeoutFromStatus(status);
     const timer = setTimeout(() => {
-      diff = diffSetter();
-      setStatus(getStatusFromTime(diff));
-      setText(textSetter(status));
-    }, timeout);
+      setDiff(diffSetter(time));
+    }, getTimeoutFromStatus(status));
     return () => clearTimeout(timer);
-  }, [status]);
+  }, [diff]);
 
-  return <div>Example Component: {text}</div>;
+  return renderer ? (
+    renderer({ time, status, diff, format, text })
+  ) : (
+    <span>Example Component: {text}</span>
+  );
 };
 
 export default ReactLiveTime;
