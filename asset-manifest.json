@@ -1,6 +1,17 @@
 {
-  "main.css": "static/css/main.65027555.css",
-  "main.css.map": "static/css/main.65027555.css.map",
-  "main.js": "static/js/main.9a23eba5.js",
-  "main.js.map": "static/js/main.9a23eba5.js.map"
+  "files": {
+    "main.css": "/react-live-time/static/css/main.c8fc9a2a.chunk.css",
+    "main.js": "/react-live-time/static/js/main.3081c528.chunk.js",
+    "main.js.map": "/react-live-time/static/js/main.3081c528.chunk.js.map",
+    "runtime~main.js": "/react-live-time/static/js/runtime~main.202b07a6.js",
+    "runtime~main.js.map": "/react-live-time/static/js/runtime~main.202b07a6.js.map",
+    "static/css/2.1b53b9c3.chunk.css": "/react-live-time/static/css/2.1b53b9c3.chunk.css",
+    "static/js/2.638ca97c.chunk.js": "/react-live-time/static/js/2.638ca97c.chunk.js",
+    "static/js/2.638ca97c.chunk.js.map": "/react-live-time/static/js/2.638ca97c.chunk.js.map",
+    "index.html": "/react-live-time/index.html",
+    "precache-manifest.8ff22047b4ddec3659144656388f349f.js": "/react-live-time/precache-manifest.8ff22047b4ddec3659144656388f349f.js",
+    "service-worker.js": "/react-live-time/service-worker.js",
+    "static/css/2.1b53b9c3.chunk.css.map": "/react-live-time/static/css/2.1b53b9c3.chunk.css.map",
+    "static/css/main.c8fc9a2a.chunk.css.map": "/react-live-time/static/css/main.c8fc9a2a.chunk.css.map"
+  }
 }
