@@ -1,96 +1,79 @@
-import React, { useState } from 'react';
-import ReactLiveTime from 'react-live-time';
+import React, { useState } from 'react'
 
-export default function App() {
-  const [date, setDate] = useState(Date.now());
-  const [format, setFormat] = useState('isoDateTime');
-  const [showSeconds, setShowSeconds] = useState(false);
+import * as EXAMPLE_TYPES from './types'
+
+import Controls from './Controls'
+import Footer from './Footer'
+import Post from './Post'
+
+import EXAMPLES from './examples.json'
+
+const Context = React.createContext({})
+
+export default function App () {
+  const [date, setDate] = useState(Date.now())
+  const [format, setFormat] = useState('dddd, d mmmm yyyy h:MMtt')
+  const [showSeconds, setShowSeconds] = useState(false)
 
   const removeMinute = () => {
-    const __d = new Date(date);
-    setDate(__d.setMinutes(__d.getMinutes() - 1));
-  };
+    const __d = new Date(date)
+    setDate(__d.setMinutes(__d.getMinutes() - 1))
+  }
 
   const removeHour = () => {
-    const __d = new Date(date);
-    setDate(__d.setHours(__d.getHours() - 1));
-  };
+    const __d = new Date(date)
+    setDate(__d.setHours(__d.getHours() - 1))
+  }
 
   const resetDate = () => {
-    setDate(Date.now());
-  };
+    setDate(Date.now())
+    setFormat('dddd, d mmmm yyyy h:MMtt')
+  }
 
   const changeFormat = e => {
-    setFormat(e.target.value);
-  };
+    setFormat(e.target.value)
+  }
 
-  const changeShowSeconds = e => {
-    setShowSeconds(e.target.checked);
-  };
+  const changeShowSeconds = showSeconds => {
+    setShowSeconds(showSeconds)
+  }
+
+  const renderExamples = () => {
+    return EXAMPLES.map(({ type, ...data }) => (
+      <Post
+        data={data}
+        context={Context}
+        renderComponent={EXAMPLE_TYPES[type]}
+        file={type}
+        key={type}
+      />
+    ))
+  }
 
   return (
-    <div>
-      <p>DATE: {new Date(date).toLocaleString()}</p>
-      <p>
-        <ReactLiveTime
-          time={date}
-          format={format}
-          showSeconds={showSeconds}
-          renderer={({ text, status, diff }) => (
-            <span>
-              {text}, {status}, {diff}
-            </span>
-          )}
-        />
-      </p>
-      <p>
-        Remove hours or minutes:
-        <button onClick={removeMinute}>Minute</button>
-        <button onClick={removeHour}>Hour</button>
-        <button onClick={resetDate}>Reset Date</button>
-        <input
-          type="text"
-          onChange={changeFormat}
-          value={format}
-          placeholder="Add format"
-        />
-        <label htmlFor="showSeconds">
-          <input
-            type="checkbox"
-            name="showSeconds"
-            onChange={changeShowSeconds}
-            value={showSeconds}
+    <Context.Provider value={{ date, format, showSeconds }}>
+      <main>
+        <h1 className='logo'>
+          <img
+            src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/facebook/158/atom-symbol_269b.png'
+            alt='logo'
+            width='48'
           />
-          Show seconds?
-        </label>
-      </p>
-      <p>
-        For formatting values, check out{' '}
-        <a
-          href="https://github.com/felixge/node-dateformat#mask-options"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          mask options
-        </a>{' '}
-        and{' '}
-        <a
-          href="https://github.com/felixge/node-dateformat#named-formats"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          named formats
-        </a>
-        . Formatting powered by{' '}
-        <a
-          href="https://github.com/felixge/node-dateformat"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          dateformat
-        </a>
-        .
-      </p>
-    </div>
-  );
+          React Live-Time
+        </h1>
+        <Controls
+          actions={{
+            removeMinute,
+            removeHour,
+            resetDate,
+            changeFormat,
+            changeShowSeconds
+          }}
+          context={Context}
+        />
+        {renderExamples()}
+        <Footer />
+      </main>
+    </Context.Provider>
+  )
 }
