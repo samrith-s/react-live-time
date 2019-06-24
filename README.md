@@ -51,7 +51,7 @@ function MyApp() {
 
 ## <a name="date-formats"></a>Date Formats
 
-The `format` props supports a large number of date formats. It relies on [`dateformat`](https://www.npmjs.com/package/dateformat) package. You can find the list of [mask options][df-mo] and the predefined [named formats][df-nf].
+The `format` props supports a large number of date formats. It relies on [`dateformat`][df] package. You can find the list of [mask options][df-mo] and the predefined [named formats][df-nf].
 
 ## <a name="examples"></a>Examples
 
