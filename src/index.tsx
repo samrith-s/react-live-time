@@ -13,13 +13,19 @@ interface ReactLiveTimeProps {
   format?: string;
   renderer?: Function;
   showSeconds?: boolean;
+  id?: string;
+  className?: string;
+  style?: object;
 }
 
 const ReactLiveTime: FunctionComponent<ReactLiveTimeProps> = ({
   time,
   format = FORMAT,
   showSeconds = false,
-  renderer
+  renderer,
+  id,
+  className,
+  style
 }) => {
   const [diff, setDiff] = useState(diffSetter(time));
   const [status, setStatus] = useState(getStatusFromTime(diff));
@@ -44,7 +50,9 @@ const ReactLiveTime: FunctionComponent<ReactLiveTimeProps> = ({
   return renderer ? (
     renderer({ time, status, diff, format, text })
   ) : (
-    <span>Example Component: {text}</span>
+    <span id={id} className={className} style={style}>
+      {text}
+    </span>
   );
 };
 
