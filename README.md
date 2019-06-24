@@ -39,15 +39,15 @@ function MyApp() {
 
 ## <a name="props"></a>Props
 
-| Name        | Type            | Default       | Description                                                                                                 |
-| ----------- | --------------- | ------------- | ----------------------------------------------------------------------------------------------------------- |
-| time        | `Date`/`Number` | `undefined`   | The value to be converted into timeago.                                                                     |
-| format      | `String`        | `isoDateTime` | The format of the displayed date. This is only valid for dates 24-hours and over.                           |
-| showSeconds | `Boolean`       | `false`       | Controls whether to show `x seconds ago..` and maintain a timer for it.                                     |
-| className   | `String`        | `undefined`   | Specify a custom class to the inner element.                                                                |
-| id          | `String`        | `undefined`   | Specify a custom ID to the inner element.                                                                   |
-| style       | `Object`        | `undefined`   | Specify custom inline styles to the inner element.                                                          |
-| renderer    | `Function`      | `undefined`   | A custom renderer, which gets all the following data as render props: <br />`{time, status, text, format }` |
+| Name        | Type            | Default       | Description                                                                                           |
+| ----------- | --------------- | ------------- | ----------------------------------------------------------------------------------------------------- |
+| time        | `Date`/`Number` | `undefined`   | The value to be converted into timeago.                                                               |
+| format      | `String`        | `isoDateTime` | The format of the displayed date. This is only valid for dates 24-hours and over.                     |
+| showSeconds | `Boolean`       | `false`       | Controls whether to show `x seconds ago..` and maintain a timer for it.                               |
+| className   | `String`        | `undefined`   | Specify a custom class to the inner element.                                                          |
+| id          | `String`        | `undefined`   | Specify a custom ID to the inner element.                                                             |
+| style       | `Object`        | `undefined`   | Specify custom inline styles to the inner element.                                                    |
+| renderer    | `Function`      | `undefined`   | A custom renderer, which gets all the following data as render props: `{time, status, text, format }` |
 
 ## <a name="date-formats"></a>Date Formats
 
