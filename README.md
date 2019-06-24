@@ -2,7 +2,7 @@
 
 A simple time-ago component for React. Made with ❤️ using hooks!
 
-[![NPM](https://img.shields.io/npm/v/react-live-time.svg)][npm] [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)][js-std] [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/samrith-s) [![Donations Badge](https://yourdonation.rocks/images/badge.svg)](https://www.patreon.com/samrith)
+[![NPM](https://img.shields.io/npm/v/react-live-time.svg)][npm] [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1e766651f0604b41b972a0e98c49c345)](https://www.codacy.com/app/samrith/react-live-time?utm_source=github.com&utm_medium=referral&utm_content=samrith-s/react-live-time&utm_campaign=Badge_Grade) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)][js-std] [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/samrith-s) [![Donations Badge](https://yourdonation.rocks/images/badge.svg)](https://www.patreon.com/samrith)
 
 ## Table of Contents
 
