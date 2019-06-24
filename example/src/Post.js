@@ -15,7 +15,11 @@ export default function Post ({
         <span role='img' aria-label='post file icon'>
           🗃
         </span>
-        <a href='#' rel='noopener noreferrer' target='_blank'>
+        <a
+          href={`https://github.com/samrith-s/react-live-time/blob/master/example/src/types/${file}.js`}
+          rel='noopener noreferrer'
+          target='_blank'
+        >
           example/types/{file}.js
         </a>
       </div>
