@@ -1,0 +1,17 @@
+[
+  {
+    "type": "Basic",
+    "image": "https://pbs.twimg.com/media/D9wdJvyW4AEtrWY?format=jpg&name=4096x4096",
+    "description": "This beautiful view was right behind our hostel in Amsterdam, called Lucky Lake. Just on the outskirts of the city. Close, but far away enough."
+  },
+  {
+    "type": "CustomStyle",
+    "image": "https://scontent-cdt1-1.cdninstagram.com/vp/bfa8a0d3c31bfcdbcff112977c92a752/5DA852B2/t51.2885-15/sh0.08/e35/p750x750/62198988_335043437165278_4232792868468289755_n.jpg?_nc_ht=scontent-cdt1-1.cdninstagram.com",
+    "description": "The beautiful Eiffel Tower. No matter how many times you've seen it, it's grandeur always amazes you."
+  },
+  {
+    "type": "CustomRenderer",
+    "image": "https://scontent-cdt1-1.cdninstagram.com/vp/3fdba922f88583f0e1febfcb98e51ba2/5DA01C6B/t51.2885-15/e35/30605020_197860000993495_5133399479738695680_n.jpg?_nc_ht=scontent-cdt1-1.cdninstagram.com",
+    "description": "Hong Kong. The city is a maze. Also, amaze."
+  }
+]
