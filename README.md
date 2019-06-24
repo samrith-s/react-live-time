@@ -1,4 +1,4 @@
-# <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/facebook/158/atom-symbol_269b.png" style="vertical-align: middle" alt="icon" width="48" /> React Live-Time
+# <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/facebook/158/atom-symbol_269b.png" style="vertical-align: middle" alt="icon" width="25" /> React Live-Time
 
 A simple time-ago component for React. Made with ❤️ using hooks!
 
