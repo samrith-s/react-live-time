@@ -1,17 +1,16 @@
 {
   "files": {
-    "main.css": "/react-live-time/static/css/main.c8fc9a2a.chunk.css",
-    "main.js": "/react-live-time/static/js/main.7c9c1670.chunk.js",
-    "main.js.map": "/react-live-time/static/js/main.7c9c1670.chunk.js.map",
+    "main.css": "/react-live-time/static/css/main.eddc8a9d.chunk.css",
+    "main.js": "/react-live-time/static/js/main.d2345c0c.chunk.js",
+    "main.js.map": "/react-live-time/static/js/main.d2345c0c.chunk.js.map",
     "runtime~main.js": "/react-live-time/static/js/runtime~main.202b07a6.js",
     "runtime~main.js.map": "/react-live-time/static/js/runtime~main.202b07a6.js.map",
-    "static/css/2.1b53b9c3.chunk.css": "/react-live-time/static/css/2.1b53b9c3.chunk.css",
-    "static/js/2.638ca97c.chunk.js": "/react-live-time/static/js/2.638ca97c.chunk.js",
-    "static/js/2.638ca97c.chunk.js.map": "/react-live-time/static/js/2.638ca97c.chunk.js.map",
+    "static/js/2.6d464d3e.chunk.js": "/react-live-time/static/js/2.6d464d3e.chunk.js",
+    "static/js/2.6d464d3e.chunk.js.map": "/react-live-time/static/js/2.6d464d3e.chunk.js.map",
     "index.html": "/react-live-time/index.html",
-    "precache-manifest.f81717ecec77312105369dc1f05354b3.js": "/react-live-time/precache-manifest.f81717ecec77312105369dc1f05354b3.js",
+    "precache-manifest.19fdc235da2b1c04fd48a136a17a2fbd.js": "/react-live-time/precache-manifest.19fdc235da2b1c04fd48a136a17a2fbd.js",
     "service-worker.js": "/react-live-time/service-worker.js",
-    "static/css/2.1b53b9c3.chunk.css.map": "/react-live-time/static/css/2.1b53b9c3.chunk.css.map",
-    "static/css/main.c8fc9a2a.chunk.css.map": "/react-live-time/static/css/main.c8fc9a2a.chunk.css.map"
+    "static/css/main.eddc8a9d.chunk.css.map": "/react-live-time/static/css/main.eddc8a9d.chunk.css.map",
+    "static/media/index.scss": "/react-live-time/static/media/clock.ec9233e3.svg"
   }
 }
