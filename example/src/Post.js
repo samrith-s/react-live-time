@@ -7,13 +7,14 @@ export default function Post ({
   renderComponent: LiveTimeComponent
 }) {
   const { date, format, showSeconds } = useContext(context)
-  console.log('data', date)
+
+  const style = { backgroundImage: `url(${image})` }
 
   return (
     <div className='post'>
       <div className='post__file'>
         <span role='img' aria-label='post file icon'>
-          🗃
+          🗂
         </span>
         <a
           href={`https://github.com/samrith-s/react-live-time/blob/master/example/src/types/${file}.js`}
@@ -38,19 +39,18 @@ export default function Post ({
           </a>{' '}
           posted this photo somewhere on the internet.
         </div>
-        <div
-          className='post__photo'
-          style={{ backgroundImage: `url(${image})` }}
-        />
-        <div className='post__photo-description'>{description}</div>
-      </div>
-      <div className='post__time'>
-        Uploaded{' '}
-        <LiveTimeComponent
-          date={date}
-          format={format}
-          showSeconds={showSeconds}
-        />
+        <div className='post__photo' style={style} />
+        <div className='post__photo-info'>
+          <div className='post__photo-description'>{description}</div>
+          <div className='post__photo-time'>
+            <span className='post__photo-time-uploaded'>Uploaded</span>
+            <LiveTimeComponent
+              date={date}
+              format={format}
+              showSeconds={showSeconds}
+            />
+          </div>
+        </div>
       </div>
     </div>
   )

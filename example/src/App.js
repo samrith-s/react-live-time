@@ -53,14 +53,19 @@ export default function App () {
   return (
     <Context.Provider value={{ date, format, showSeconds }}>
       <main>
-        <h1 className='logo'>
-          <img
-            src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/facebook/158/atom-symbol_269b.png'
-            alt='logo'
-            width='48'
-          />
-          React Live-Time
-        </h1>
+        <a className='logo' href='/' alt='this page'>
+          <div className='logo__image' />
+          <div className='logo__content'>
+            <h1 className='logo__content-heading'>React Live-Time</h1>
+            <h2 className='logo__content-heading-sub'>
+              A simple time-ago component for React. Made with{' '}
+              <span role='img' aria-label='heart-emoji'>
+                ❤️
+              </span>
+              using hooks!
+            </h2>
+          </div>
+        </a>
         <Controls
           actions={{
             removeMinute,

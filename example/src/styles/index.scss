@@ -2,23 +2,26 @@
 
 $black: #222;
 $white: #fefefe;
-$dark: #40476d;
+$dark: #24243e;
 $light: #fffff2;
-$base: #5271c4;
-$alt: #b19fff;
-$alt2: #eca1fe;
+$base: #302b63;
+$alt: #0f0c29;
+
+$logo-height: 70px;
+
+$background: linear-gradient(to right, $dark, $base, $alt);
 
 html,
 body,
 #root {
-  width: 100%;
+  width: 100vw;
   min-height: 100vh;
   margin: 0;
   padding: 0;
   font-size: 14px;
   font-family: 'Overpass', sans-serif;
-  background: linear-gradient(-225deg, $base 0%, $alt 48%, $alt2 100%);
-  background-size: cover;
+  background-color: $alt;
+  background-image: $background;
 }
 
 * {
@@ -35,21 +38,51 @@ main {
 .logo {
   display: flex;
   align-items: center;
-  margin: 0 0 20px;
+  margin: 0;
   color: $light;
   font-weight: normal;
-  // text-shadow: 0 5px 5px $alt;
+  background: #{$background} no-repeat center / 100vw;
+  text-decoration: none;
+  z-index: 999;
+
+  &__image {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px 0 0;
+    background: url('../images/clock.svg') no-repeat center / contain;
+  }
 
   > img {
     margin: 0 10px 0 0;
   }
+
+  &__content {
+    line-height: 1;
+
+    &-heading {
+      margin: 0;
+
+      &-sub {
+        margin: 0;
+        color: rgba($light, 0.65);
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+.subtitle {
+  color: $light;
+  font-size: 0.8rem;
 }
 
 footer {
-  text-align: center;
+  margin: 40px 0 0;
   color: $light;
-  opacity: 0.75;
   font-size: 0.8rem;
+  text-align: center;
+  opacity: 0.75;
+  line-height: 1;
 
   a {
     color: inherit;

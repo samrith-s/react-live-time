@@ -20,8 +20,7 @@ export default function Footer () {
         >
           named formats
         </a>
-        . <br />
-        Powered by{' '}
+        . Powered by{' '}
         <a
           href='https://github.com/felixge/node-dateformat'
           rel='noopener noreferrer'
@@ -32,11 +31,30 @@ export default function Footer () {
         .
       </p>
       <p>
-        Made with{' '}
-        <span role='img' aria-label='Heart emoji'>
-          ❤️
-        </span>{' '}
-        using Hooks
+        Icons made by{' '}
+        <a
+          href='https://www.flaticon.com/authors/pixel-buddha'
+          rel='noopener noreferrer'
+          target='_blank'
+        >
+          Pixel Buddha
+        </a>{' '}
+        from{' '}
+        <a
+          href='https://www.flaticon.com/'
+          rel='noopener noreferrer'
+          target='_blank'
+        >
+          FlatIcon
+        </a>{' '}
+        is licensed by{' '}
+        <a
+          href='http://creativecommons.org/licenses/by/3.0/'
+          rel='noopener noreferrer'
+          target='_blank'
+        >
+          CC 3.0 BY
+        </a>
       </p>
     </footer>
   )

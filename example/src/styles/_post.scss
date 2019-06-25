@@ -1,24 +1,66 @@
 .post {
+  position: relative;
   display: block;
-  margin: 20px 0;
-  padding: 10px;
-  background: $light;
+  margin: 40px 0;
   border: 0;
-  border-radius: 3px;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  cursor: pointer;
+
+  $self: &;
+
+  $background: rgba($light, 0.85);
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px 0 rgba(black, 0.5);
+
+    #{$self} {
+      &__file {
+        border-radius: 5px 5px 0 0;
+        opacity: 1;
+      }
+
+      &__profile-info {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+
+      &__photo {
+        &-time {
+          border-radius: 0 0 5px 5px;
+        }
+
+        &-description {
+          transform: translate(0, 0);
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+  }
 
   &__file {
-    display: flex;
-    align-items: center;
-    margin: -10px -10px 10px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
     padding: 5px 10px;
-    color: $dark;
+    height: 30px;
     font-family: monospace;
     font-size: 0.8rem;
     line-height: normal;
-    background: darken($white, 10%);
-    border-radius: 3px 3px 0 0;
+    background: $background;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    opacity: 0.5;
+    z-index: 1;
 
-    > a {
+    a {
       color: $dark;
       text-decoration: none;
       border-bottom: 1px dotted $dark;
@@ -30,22 +72,27 @@
       }
     }
 
-    > span {
+    span {
       margin: 0 5px 0 0;
     }
   }
 
-  &__content {
-    opacity: 0.35;
-    transition: all 0.5s ease;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-
   &__profile-info {
+    position: absolute;
+    top: 35px;
+    left: 5px;
+    right: 5px;
     margin: 0 0 5px;
+    padding: 5px 10px;
+    color: darken($white, 55%);
+    background: $background;
+    border-top: 1px solid rgba($black, 0.35);
+    border-radius: 0 0 5px 5px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transform: translate(0, 5px);
+    transition: all 0.5s ease;
+    z-index: 1;
 
     > a {
       color: $alt;
@@ -66,16 +113,49 @@
   }
 
   &__photo {
+    position: relative;
     width: 100%;
     height: 0;
     padding-bottom: 100%;
-    background: $white no-repeat center / cover;
-    border-radius: 3px;
+    background: transparent no-repeat center / cover;
+
+    &-info {
+      position: absolute;
+      bottom: 0;
+      left: 5px;
+      right: 5px;
+      margin: 0;
+      font-size: 0.8rem;
+      line-height: 1.2;
+    }
 
     &-description {
-      margin: 10px 0;
-      font-size: 0.9rem;
-      line-height: 1.2;
+      padding: 10px;
+      color: $dark;
+      background: $background;
+      border-bottom: 1px solid rgba($black, 0.35);
+      border-radius: 5px 5px 0 0;
+      opacity: 0;
+      transform: translate(0, -5px);
+      transition: all 0.5s ease;
+      z-index: 1;
+    }
+
+    &-time {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 30px;
+      margin: 0 0 5px;
+      padding: 10px;
+      color: $dark;
+      background: $background;
+      border-radius: 5px;
+      transition: all 0.5s ease;
+
+      &-uploaded {
+        margin-right: 4px;
+      }
     }
   }
 }

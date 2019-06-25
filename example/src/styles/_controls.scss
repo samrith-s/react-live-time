@@ -1,79 +1,37 @@
-.controls {
-  position: sticky;
-  top: 0;
-  left: auto;
+.controls__buttons {
   display: flex;
-  align-items: center;
-  padding: 20px 15px 20px;
-  background: $black;
-  border-radius: 0 0 3px 3px;
-  z-index: 999;
-  backdrop-filter: blur(10px);
+  margin: 20px 0 -10px;
 
-  &__clock {
-    flex-shrink: 0;
-    background: $white;
-    border-radius: 50%;
-    margin: 0 10px 0 0;
-
-    .react-clock {
-      &__face {
-        padding: 5px;
-        border: 0;
-      }
-
-      &__mark__body {
-        margin-top: 2px;
-        background: $dark;
-      }
-
-      &__hour-hand__body,
-      &__minute-hand__body {
-        background: $dark;
-      }
-    }
-  }
-
-  &__group {
-    flex-shrink: 1;
+  > button {
     width: 100%;
-  }
+    height: 100%;
+    margin: 0 1px 0 0;
+    padding: 10px 20px;
+    color: $light;
+    background: $alt;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.5s ease;
 
-  &__buttons {
-    display: flex;
-    margin: 0;
+    &:hover {
+      background: lighten($alt, 35%);
+    }
 
-    > button {
-      width: 100%;
-      height: 100%;
-      margin: 0 1px 0 0;
-      padding: 10px 20px;
-      color: $light;
-      background: $base;
-      border: 0;
-      border-radius: 0;
-      outline: 0;
-      vertical-align: middle;
-      cursor: pointer;
-      user-select: none;
-      transition: all 0.5s ease;
+    &:active {
+      background: lighten($alt, 20%);
+    }
 
-      &:hover {
-        background: darken($base, 10%);
-      }
+    &:first-of-type {
+      border-radius: 3px 0 0 3px;
+    }
 
-      &:active {
-        background: darken($base, 20%);
-      }
-
-      &:first-of-type {
-        border-radius: 3px 0 0 0;
-      }
-
-      &:last-of-type {
-        border-radius: 0 3px 0 0;
-        margin: 0;
-      }
+    &:last-of-type {
+      border-radius: 0 3px 3px 0;
+      margin: 0;
     }
   }
 
@@ -81,7 +39,7 @@
     display: flex;
     align-items: center;
     padding: 5px 15px;
-    background: $light;
+    background: transparent;
     color: $dark;
     border-radius: 0 0 3px 3px;
     outline: 0;
@@ -90,12 +48,16 @@
     > input {
       flex-shrink: 1;
       width: 100%;
+      margin: 0 10px 0 0;
+      color: $light;
+      background: transparent;
       border: 0;
       outline: 0;
     }
 
     > label {
       flex-shrink: 0;
+      user-select: none;
       cursor: pointer;
 
       > .is--unchecked {
