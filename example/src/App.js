@@ -53,7 +53,7 @@ export default function App () {
   return (
     <Context.Provider value={{ date, format, showSeconds }}>
       <main>
-        <a className='logo' href='/' alt='this page'>
+        <a className='logo' href={window.location.href} alt='this page'>
           <div className='logo__image' />
           <div className='logo__content'>
             <h1 className='logo__content-heading'>React Live-Time</h1>
