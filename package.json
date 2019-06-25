@@ -11,6 +11,7 @@
   "bugs": {
     "url": "https://github.com/samrith-s/react-live-time/issues"
   },
+  "homepage": "https://samrith-s.github.io/react-live-time",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
