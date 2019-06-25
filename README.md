@@ -1,4 +1,4 @@
-# <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/facebook/158/atom-symbol_269b.png" style="vertical-align: middle" alt="icon" width="25" /> React Live-Time
+# <img src="https://samrith-s.github.io/react-live-time/static/media/clock.ec9233e3.svg" style="vertical-align: middle" alt="icon" width="30" /> React Live-Time
 
 A simple time-ago component for React. Made with ❤️ using hooks!
 
@@ -55,7 +55,7 @@ The `format` props supports a large number of date formats. It relies on [`datef
 
 ## <a name="examples"></a>Examples
 
-There is a basic example up and running on the [GitHub pages][gh-pages]
+There is a basic example up and running on the [GitHub pages][gh-pages].
 
 ## <a name="license"></a>License
 
