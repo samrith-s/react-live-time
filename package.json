@@ -1,6 +1,6 @@
 {
   "name": "react-live-time",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A simple time-ago component for React. Made with ❤️ using hooks!",
   "author": "samrith-s",
   "license": "GPL-3.0",
