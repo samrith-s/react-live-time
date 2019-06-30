@@ -91,5 +91,19 @@ footer {
   }
 }
 
+.badges {
+  max-width: 85%;
+  margin: 10px auto 0;
+  text-align: center;
+
+  > a {
+    margin-right: 5px;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+}
+
 @import './controls';
 @import './post';

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import * as EXAMPLE_TYPES from './types'
 
+import Badges from './Badges'
 import Controls from './Controls'
 import Footer from './Footer'
 import Post from './Post'
@@ -66,6 +67,7 @@ export default function App () {
             </h2>
           </div>
         </a>
+        <Badges />
         <Controls
           actions={{
             removeMinute,
