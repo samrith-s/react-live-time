@@ -2,7 +2,7 @@
 
 A simple time-ago component for React. Made with ❤️ using hooks!
 
-[![NPM](https://img.shields.io/npm/v/react-live-time.svg)][npm] [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1e766651f0604b41b972a0e98c49c345)](https://www.codacy.com/app/samrith/react-live-time?utm_source=github.com&utm_medium=referral&utm_content=samrith-s/react-live-time&utm_campaign=Badge_Grade) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)][js-std] [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/samrith-s) [![Donations Badge](https://yourdonation.rocks/images/badge.svg)](https://www.patreon.com/samrith)
+[![NPM](https://img.shields.io/npm/v/react-live-time.svg)][npm] [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1e766651f0604b41b972a0e98c49c345)](https://www.codacy.com/app/samrith/react-live-time?utm_source=github.com&utm_medium=referral&utm_content=samrith-s/react-live-time&utm_campaign=Badge_Grade) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)][js-std] [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/samrith-s) [![Donations Badge](https://yourdonation.rocks/images/badge.svg)](https://www.patreon.com/samrith) [![GitHub stars](https://img.shields.io/github/stars/samrith-s/react-live-time.svg)][stars]
 
 ## Table of Contents
 
@@ -64,6 +64,7 @@ GPL-3.0 © [samrith-s](https://github.com/samrith-s)
 [gh-pages]: https://samrith-s.github.io/react-live-time/
 [npm]: https://www.npmjs.com/package/react-live-time
 [js-std]: https://standardjs.com
+[stars]: https://github.com/samrith-s/react-live-time/stargazers
 [df]: https://www.npmjs.com/package/dateformat
 [df-mo]: https://github.com/felixge/node-dateformat#mask-options
 [df-nf]: https://github.com/felixge/node-dateformat#named-formats
