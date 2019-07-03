@@ -1,5 +1,4 @@
-import dateFormat from 'dateformat';
-
+import { Localization } from './interfaces';
 import { FORMAT, TimeValues, StateValues } from './constants';
 
 export { FORMAT };
@@ -63,35 +62,43 @@ export function getCoefficientFromTime(status: string, diff: number): number {
 }
 
 export function textSetter(
-  diff: number,
-  time: Date | number,
-  status: string,
-  format?: string
-): string {
-  const coeff = getCoefficientFromTime(status, diff);
+  formatter: Function,
+  prefix: string,
+  suffix: string,
+  locale: Localization
+) {
+  return function(
+    diff: number,
+    time: Date | number,
+    status: string,
+    format: string
+  ): string {
+    const coeff = getCoefficientFromTime(status, diff);
+    const pluralize = pluralizer(prefix, suffix);
 
-  switch (status) {
-    default:
-    case StateValues.FRESH: {
-      return 'just now';
-    }
+    switch (status) {
+      default:
+      case StateValues.FRESH: {
+        return locale.justNow;
+      }
 
-    case StateValues.PER_SECOND: {
-      return pluralize(coeff, 'second', 'ago');
-    }
+      case StateValues.PER_SECOND: {
+        return pluralize(coeff, locale.seconds);
+      }
 
-    case StateValues.PER_MINUTE: {
-      return pluralize(coeff, 'minute', 'ago');
-    }
+      case StateValues.PER_MINUTE: {
+        return pluralize(coeff, locale.minutes);
+      }
 
-    case StateValues.PER_HOUR: {
-      return pluralize(coeff, 'hour', 'ago');
-    }
+      case StateValues.PER_HOUR: {
+        return pluralize(coeff, locale.hours);
+      }
 
-    case StateValues.STATIC: {
-      return dateFormat(time, format);
+      case StateValues.STATIC: {
+        return formatter(locale, time, format);
+      }
     }
-  }
+  };
 }
 
 export function timeValueSetter(time: Date | number): number {
@@ -107,6 +114,8 @@ export function diffSetter(time: Date | number): number {
   return Date.now() - timeValue;
 }
 
-function pluralize(value: number, text: string, rest: string): string {
-  return [value, value === 1 ? text : text + 's', rest].join(' ');
+function pluralizer(prefix: string = '', suffix: string = ''): Function {
+  return function(value: number, text: string): string {
+    return [prefix, value, value === 1 ? text : text + 's', suffix].join(' ');
+  };
 }
