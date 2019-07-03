@@ -1,5 +1,10 @@
 import React, { FunctionComponent, useState, useEffect } from 'react';
 
+import LOCALIZATION from './localization';
+import { ReactLiveTimeProps, Localization } from './interfaces';
+
+import Formatter from './formatter';
+
 import {
   FORMAT,
   getStatusFromTime,
@@ -8,28 +13,27 @@ import {
   diffSetter
 } from './util';
 
-interface ReactLiveTimeProps {
-  time: Date | number;
-  format?: string;
-  renderer?: Function;
-  showSeconds?: boolean;
-  id?: string;
-  className?: string;
-  style?: object;
-}
-
-const ReactLiveTime: FunctionComponent<ReactLiveTimeProps> = ({
-  time,
-  format = FORMAT,
-  showSeconds = false,
-  renderer,
-  id,
-  className,
-  style
-}) => {
+function ReactLiveTime(props: ReactLiveTimeProps): FunctionComponent {
+  const {
+    time,
+    format = FORMAT,
+    showSeconds = false,
+    renderer,
+    id,
+    className,
+    style,
+    prefix,
+    suffix
+  } = props;
+  const setCompText = textSetter(
+    Formatter,
+    prefix || ReactLiveTime.prefix,
+    suffix || ReactLiveTime.suffix,
+    ReactLiveTime.localization || LOCALIZATION
+  );
   const [diff, setDiff] = useState(diffSetter(time));
   const [status, setStatus] = useState(getStatusFromTime(diff));
-  const [text, setText] = useState(textSetter(diff, time, status, format));
+  const [text, setText] = useState(setCompText(diff, time, status, format));
 
   useEffect(() => setDiff(diffSetter(time)), [time, showSeconds]);
   useEffect(() => setStatus(getStatusFromTime(diff, showSeconds)), [
@@ -37,7 +41,7 @@ const ReactLiveTime: FunctionComponent<ReactLiveTimeProps> = ({
     showSeconds
   ]);
   useEffect(() => {
-    setText(textSetter(diff, time, status, format));
+    setText(setCompText(diff, time, status, format));
   }, [status, diff, format]);
 
   useEffect(() => {
@@ -54,6 +58,19 @@ const ReactLiveTime: FunctionComponent<ReactLiveTimeProps> = ({
       {text}
     </span>
   );
-};
+}
+
+namespace ReactLiveTime {
+  export let localization: Localization = LOCALIZATION;
+  export let prefix: string = '';
+  export let suffix: string = '';
+}
+
+export function setLocale(locale: Object) {
+  ReactLiveTime.localization = {
+    ...LOCALIZATION,
+    ...locale
+  };
+}
 
 export default ReactLiveTime;
