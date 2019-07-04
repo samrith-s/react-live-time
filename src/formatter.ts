@@ -7,14 +7,25 @@ export default function Formatter(
 ): string {
   const { months, days, meridians } = locale;
   const date: Date = new Date(dateValue);
-  const regexp: RegExp = /(M+)|(Y+)|(D+)|(d+)|(h+)|(m+)|(s+)|(a+)|(A+)/g;
+  const regexp: RegExp = /(Y+)|(M+)|(D+)|(d+)|(h+)|(m+)|(s+)|(a+)|(A+)/g;
   const replaceKeys = replacer(date, months, days, meridians);
   const matches = format.match(regexp) || [];
+  const replaced: Object = {};
 
-  return matches.reduce(
-    (value, key) => value.replace(key, replaceKeys(key)),
-    format
+  const deducedFormat = matches
+    .reduce((acc, key, index) => {
+      replaced[acc.indexOf(key) + index] = replaceKeys(key);
+      return acc.replace(key, '');
+    }, format)
+    .split('');
+
+  Object.entries(replaced).forEach(
+    ([index, value]): void => {
+      deducedFormat.splice(parseInt(index, 10), 0, value);
+    }
   );
+
+  return deducedFormat.join('');
 }
 
 function replacer(
