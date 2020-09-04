@@ -12,7 +12,7 @@
     "react-live-time": "link:.."
   },
   "devDependencies": {
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "react-scripts": "^3.0.1"
   },
   "scripts": {
